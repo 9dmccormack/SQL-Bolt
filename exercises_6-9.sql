@@ -18,7 +18,24 @@ FROM movies
 ORDER BY rating DESC;
 
 --exercise 7
+SELECT DISTINCT building FROM employees;
+
+SELECT * FROM buildings;
+
+SELECT DISTINCT building_name, role 
+FROM buildings 
+  LEFT JOIN employees
+    ON building_name = building;
 
 --exercise 8
+SELECT name, role FROM employees
+WHERE building IS NULL;
+
+SELECT DISTINCT building_name
+FROM buildings 
+  LEFT JOIN employees
+    ON building_name = building
+WHERE role IS NULL;
 
 --exercise 9
+
