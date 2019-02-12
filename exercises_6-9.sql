@@ -88,3 +88,41 @@ FROM movies
     INNER JOIN boxoffice
         ON movies.id = boxoffice.movie_id
 GROUP BY director;
+--exercise 13
+INSERT INTO movies VALUES (4, "Toy Story 4", "El Directore", 2015, 90);
+
+INSERT INTO boxoffice VALUES (4, 8.7, 340000000, 270000000);
+--exercise 14
+UPDATE movies
+SET director = "John Lasseter"
+WHERE id = 2;
+
+UPDATE movies
+SET year = 1999
+WHERE id = 3;
+
+UPDATE movies
+SET title = "Toy Story 3", director = "Lee Unkrich"
+WHERE id = 11;
+--exercise 15
+DELETE FROM movies
+where year < 2005;
+
+DELETE FROM movies
+where director = "Andrew Stanton";
+--exercise 16
+CREATE TABLE Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_count INTEGER
+);
+--exercise 17
+ALTER TABLE Movies
+  ADD COLUMN Aspect_ratio FLOAT DEFAULT 2.39;
+
+ALTER TABLE Movies
+  ADD COLUMN Language TEXT DEFAULT "English";
+--exercise 18
+DROP TABLE Movies;
+
+DROP TABLE BoxOffice;
